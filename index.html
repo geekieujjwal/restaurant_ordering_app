@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant Ordering App</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <!-- First Interface -->
+    <header>
+      <img src="/header_img.png" alt="Restaurant Logo" />
+    </header>
+    <main>
+      <div class="items"></div>
+    </main>
+    <footer id="restaurant-footer">
+      <h4>Your Order</h4>
+      <div class="items-ordered"></div>
+      <hr />
+      <div class="total">
+        <p>Total Price</p>
+        <div class="total-amount"></div>
+      </div>
+      <button id="complete-order-btn" data-complete-btn="complete-order-btn">
+        Complete Order
+      </button>
+    </footer>
+
+    <!-- Second Interface -->
+    <div class="card-details-container">
+      <h4>Enter Card Details</h4>
+      <form id="myForm">
+        <input id="name" type="text" placeholder="Enter your name" required />
+        <input
+          type="number"
+          min="0"
+          max="9999999999999999"
+          onKeyPress="if(this.value.length===16) return false"
+          placeholder="Enter card number"
+          required
+        />
+        <input
+          type="number"
+          min="0"
+          max="999"
+          onKeyPress="if(this.value.length===3) return false"
+          placeholder="Enter CVV"
+          required
+        />
+        <button id="pay-button" data-pay-btn="Payment Complete">Pay</button>
+      </form>
+    </div>
+
+    <!-- Third Interface -->
+    <div class="order-placed">
+      <p id="order-placed-message"></p>
+    </div>
+
+    <script src="/index.js" type="module"></script>
+  </body>
+</html>
